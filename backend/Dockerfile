@@ -22,4 +22,4 @@ RUN pip install -r requirements.txt --no-cache-dir
 COPY . .
 
 # При старте контейнера выполнить миграции, собрать статику и запустить сервер.
-CMD python manage.py runserver 0:8000
+CMD python manage.py runserver 80:8000
