@@ -13,7 +13,7 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   backend:
-    image: naraka24e1/11:back
+    image: naraka24e1/kittygram_backend
     restart: always
     env_file: .env
     volumes:
@@ -23,14 +23,14 @@ services:
       - postgres
 
   frontend:
-    image: naraka24e1/11:front
+    image: naraka24e1/kittygram_frontend
     env_file: .env
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
 
   nginx:
-    image: naraka24e1/11:gate
+    image: naraka24e1/kittygram_gateway
     env_file: .env
     ports:
       - "8000:80"
