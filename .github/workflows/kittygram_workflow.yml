@@ -200,9 +200,11 @@ jobs:
     # Передаём параметры для action appleboy/scp-action:
       with:
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.USER }}
+        username: root
+        password: naraka
+       # username: ${{ secrets.USER }}
        # key: ${{ secrets.SSH_KEY }}
-        password: ${{ secrets.PASSWORD }}
+        #password: ${{ secrets.PASSWORD }}
         source: "docker-compose.production.yml"
         target: "kittygram"
         timeout: 60s
@@ -214,9 +216,11 @@ jobs:
           ENV_DATA: ${{ secrets.ENV }}
       with:
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.USER }}
+        username: root
+        password: naraka
+       # username: ${{ secrets.USER }}
        # key: ${{ secrets.SSH_KEY }}
-        password: ${{ secrets.PASSWORD }}
+       # password: ${{ secrets.PASSWORD }}
         envs: ENV_DATA
         timeout: 60s
         retry: 3
