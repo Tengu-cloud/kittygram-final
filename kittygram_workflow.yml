@@ -9,7 +9,7 @@ on:
   push:
     # Отслеживаем изменения только в ветке main:
     branches:
-      - main
+      - [main]
 # Перечень задач
 jobs:
   tests:
