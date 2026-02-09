@@ -201,7 +201,8 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
+       # key: ${{ secrets.SSH_KEY }}
+        password: ${{ secrets.PASSWORD }}
         source: "docker-compose.production.yml"
         target: "kittygram"
         timeout: 60s
@@ -214,7 +215,8 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
+       # key: ${{ secrets.SSH_KEY }}
+        password: ${{ secrets.PASSWORD }}
         envs: ENV_DATA
         timeout: 60s
         retry: 3
