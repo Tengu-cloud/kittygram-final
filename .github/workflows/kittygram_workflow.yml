@@ -196,7 +196,7 @@ jobs:
       uses: actions/checkout@v6
     # Копируем docker-compose.production.yml на продакшен-сервер:
     - name: Copy docker-compose.production.yml via ssh
-      uses: appleboy/scp-action@v1
+      uses: easingthemes/ssh-deploy@main                      # appleboy/scp-action@v1
     # Передаём параметры для action appleboy/scp-action:
       with:
         host: ${{ secrets.HOST }}
@@ -205,7 +205,7 @@ jobs:
         source: "docker-compose.production.yml"
         target: "kittygram"
     - name: Executing remote ssh commands to deploy
-      uses: appleboy/ssh-action@v1.0.0
+      uses: JimCronqvist/action-ssh                                    #appleboy/ssh-action@v1.0.0
       env:
           ENV_DATA: ${{ secrets.ENV }}
       with:
