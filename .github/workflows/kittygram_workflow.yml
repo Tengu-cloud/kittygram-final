@@ -205,7 +205,7 @@ jobs:
         source: "docker-compose.production.yml"
         target: "kittygram"
     - name: Executing remote ssh commands to deploy
-      uses: appleboy/ssh-action@v1
+      uses: appleboy/ssh-action@v1.0.0
       env:
           ENV_DATA: ${{ secrets.ENV }}
       with:
