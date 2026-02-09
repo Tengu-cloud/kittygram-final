@@ -208,6 +208,7 @@ jobs:
         timeout: 60s
         retry: 3
         retry_interval: 10s
+        strict_host_key_checking: false
     - name: Executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
       env:
@@ -221,6 +222,7 @@ jobs:
         timeout: 60s
         retry: 3
         retry_interval: 10s
+        strict_host_key_checking: false
 # Параметр script передаёт в action appleboy/ssh-action команды,
         # которые нужно выполнить на сервере, 
         # с которым установлено соединение:
