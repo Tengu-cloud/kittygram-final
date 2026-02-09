@@ -204,9 +204,9 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         source: "docker-compose.production.yml"
         target: "kittygram"
-        timeout: 60
+        timeout: 60s
         retry: 3
-        retry_interval: 10
+        retry_interval: 10s
     - name: Executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
       env:
@@ -216,9 +216,9 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         envs: ENV_DATA
-        timeout: 60
+        timeout: 60s
         retry: 3
-        retry_interval: 10
+        retry_interval: 10s
 # Параметр script передаёт в action appleboy/ssh-action команды,
         # которые нужно выполнить на сервере, 
         # с которым установлено соединение:
