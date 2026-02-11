@@ -22,4 +22,5 @@ RUN pip install -r requirements.txt --no-cache-dir
 COPY . .
 
 # При старте контейнера выполнить миграции, собрать статику и запустить сервер.
-CMD python manage.py runserver 80:8000
+#CMD python manage.py runserver 80:8000
+CMD ["gunicorn", "kittygram_backend.wsgi:application", "--bind", "0.0.0.0:8000"]
